@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://l1m23p3swtrh"]
+
+[ext_resource type="Script" path="res://Globals/LSL_Global.gd" id="1_pvt5k"]
+
+[node name="LSL" type="Node"]
+script = ExtResource("1_pvt5k")

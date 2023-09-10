@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://csn0l82j0f8y1"]
+
+[ext_resource type="Script" path="res://Scenes/Test.gd" id="1_o4van"]
+
+[node name="Test" type="Node"]
+script = ExtResource("1_o4van")
+
+[node name="TopText" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -394.5
+offset_right = 394.5
+offset_bottom = 26.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "This is a simple test scene. When you press the button, an LSL marker containing 'Godot' will be sent."
+horizontal_alignment = 1
+
+[node name="SendMarker" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -56.5
+offset_right = 134.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Send 'Godot' LSL Marker"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 414.0
+offset_right = 657.0
+offset_bottom = 501.0
+text = "Pull Sample"
+
+[connection signal="pressed" from="SendMarker" to="." method="_on_send_marker_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
