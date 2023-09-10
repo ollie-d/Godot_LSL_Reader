@@ -33,44 +33,4 @@ public partial class LSL_Inlet : Node
         stream_inlet.pull_sample(samples);
         return samples;
     }
-
-    public void main()
-    {
-        connect_to_stream("type", "EEG", 8);
-
-        //float[] samples = pull_sample();
-
-        //foreach (float f in samples)
-        //    GD.Print(f);
-
-        /*=======================================================*/
-
-        // Below here WORKS
-        /*
-        //connect_to_stream("type", "EEG", 8);
-        StreamInfo[] results = LSL.LSL.resolve_stream("type", "EEG");
-        using StreamInlet inlet = new StreamInlet(results[0]);
-        stream_inlet = inlet;
-        results.DisposeArray();
-        GD.Print(stream_inlet.info().as_xml());
-        num_channels = 8;
-
-        float[] samples = pull_sample();
-
-        // read samples
-        //float[] sample = new float[8];
-        //stream_inlet.pull_sample(sample);
-        foreach (float f in samples)
-            GD.Print(f);
-        //return sample;
-        //while (true)
-        //{
-         //   inlet.pull_sample(sample);
-          //  foreach (float f in sample)
-           //     GD.Print("\t{0}", f);
-            //System.Console.WriteLine();
-       // }
-        */
-    }
-
 }
