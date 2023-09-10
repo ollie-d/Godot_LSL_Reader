@@ -20,10 +20,7 @@ public partial class LSL_Inlet : Node
         StreamInfo[] results = LSL.LSL.resolve_stream(prop, value);
         stream_inlet = new StreamInlet(results[0]);
         results.DisposeArray();
-        GD.Print(stream_inlet.info().as_xml());
-        num_channels = 8;
-        float[] samples = new float[num_channels];
-        stream_inlet.pull_sample(samples);
+        num_channels = num_channels_;
     }
 
     // Takes no arguments with the assumption that global vars were previously set
