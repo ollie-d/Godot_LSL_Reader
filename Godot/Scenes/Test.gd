@@ -1,5 +1,6 @@
 extends Node
 
+var loop_pulling = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +22,8 @@ func _on_send_marker_pressed():
 
 
 func _on_button_pressed():
-	print(LSL.pull_sample())
+	loop_pulling = !loop_pulling
+	while loop_pulling:
+		print(LSL.pull_sample())
 	#var data = LSL.pull_sample()
 	#print(data)

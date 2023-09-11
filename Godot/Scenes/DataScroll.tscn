@@ -1,0 +1,140 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnko7xffa0wsu"]
+
+[ext_resource type="Script" path="res://Scenes/DataScroll.gd" id="1_mavri"]
+[ext_resource type="PackedScene" uid="uid://ffvfdkb462mg" path="res://Scenes/Channel.tscn" id="2_ttqfx"]
+
+[node name="DataScroll" type="Node"]
+script = ExtResource("1_mavri")
+
+[node name="BG" type="ColorRect" parent="."]
+unique_name_in_owner = true
+offset_right = 1180.0
+offset_bottom = 532.0
+color = Color(0.470588, 0.470588, 0.470588, 1)
+
+[node name="ChannelsH" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="margin10" type="MarginContainer" parent="ChannelsH"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="ChannelsV" type="VBoxContainer" parent="ChannelsH"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="margin9" type="MarginContainer" parent="ChannelsH/ChannelsV"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 20
+
+[node name="ch1" parent="ChannelsH/ChannelsV" instance=ExtResource("2_ttqfx")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="margin1" type="MarginContainer" parent="ChannelsH/ChannelsV"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 50
+
+[node name="ch2" parent="ChannelsH/ChannelsV" instance=ExtResource("2_ttqfx")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="margin2" type="MarginContainer" parent="ChannelsH/ChannelsV"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 50
+
+[node name="ch3" parent="ChannelsH/ChannelsV" instance=ExtResource("2_ttqfx")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="margin3" type="MarginContainer" parent="ChannelsH/ChannelsV"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 50
+
+[node name="ch4" parent="ChannelsH/ChannelsV" instance=ExtResource("2_ttqfx")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="margin4" type="MarginContainer" parent="ChannelsH/ChannelsV"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 50
+
+[node name="ch5" parent="ChannelsH/ChannelsV" instance=ExtResource("2_ttqfx")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="margin5" type="MarginContainer" parent="ChannelsH/ChannelsV"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 50
+
+[node name="ch6" parent="ChannelsH/ChannelsV" instance=ExtResource("2_ttqfx")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="margin6" type="MarginContainer" parent="ChannelsH/ChannelsV"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 50
+
+[node name="ch7" parent="ChannelsH/ChannelsV" instance=ExtResource("2_ttqfx")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="margin7" type="MarginContainer" parent="ChannelsH/ChannelsV"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 50
+
+[node name="ch8" parent="ChannelsH/ChannelsV" instance=ExtResource("2_ttqfx")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="margin8" type="MarginContainer" parent="ChannelsH/ChannelsV"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 60
+
+[node name="Controls" type="HBoxContainer" parent="ChannelsH/ChannelsV"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ChannelsH/ChannelsV/Controls"]
+layout_mode = 2
+text = "Stream Name:"
+
+[node name="stream_name" type="LineEdit" parent="ChannelsH/ChannelsV/Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "000"
+
+[node name="connect" type="Button" parent="ChannelsH/ChannelsV/Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Connect"
+
+[node name="pull_samples" type="Button" parent="ChannelsH/ChannelsV/Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pull Samples
+"
+
+[node name="picker" type="ColorPickerButton" parent="ChannelsH/ChannelsV/Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pick"
+color = Color(0.470588, 0.470588, 0.470588, 1)
+
+[connection signal="pressed" from="ChannelsH/ChannelsV/Controls/connect" to="." method="_on_connect_pressed"]
+[connection signal="pressed" from="ChannelsH/ChannelsV/Controls/pull_samples" to="." method="_on_button_pressed"]
+[connection signal="color_changed" from="ChannelsH/ChannelsV/Controls/picker" to="." method="_on_color_picker_button_color_changed"]

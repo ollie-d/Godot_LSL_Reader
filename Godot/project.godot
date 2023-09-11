@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="LSL Reader"
-run/main_scene="res://Scenes/Test.tscn"
+run/main_scene="res://Scenes/DataScroll.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 LSL="*res://Globals/LSL.tscn"
+
+[display]
+
+window/size/viewport_width=1180
+window/size/viewport_height=532
+window/stretch/mode="viewport"
 
 [dotnet]
 
